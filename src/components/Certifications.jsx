@@ -1,15 +1,20 @@
+import Work from "./Work.jsx";
 import google from "../assets/google.png";
 import cisco from "../assets/cisco.png";
 import sololearn from "../assets/sololearn.png";
-
 import aws from "../assets/aws2.png";
-import Work from "./Work.jsx";
+import { useTheme } from "../context/ThemeContext.jsx"; // Import ThemeContext
 
 const Certifications = () => {
-  const openCertificate = (path) => {
-    window.open(path, "_blank");
-  };
+  const { isDark } = useTheme(); // Access theme mode
 
+  // Define colors based on theme
+  const cardBgColor = isDark ? "#1a202c" : "#ffffff";
+  const cardTextColor = isDark ? "text-white" : "text-black";
+  const subTextColor = isDark ? "text-gray-300" : "text-gray-600";
+  const cardShadowColor = isDark ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0.1)";
+  const borderColor = isDark ? "#333b4a" : "#dcdcdc";
+  
   const certifications = [
     {
       logo: sololearn,
@@ -53,13 +58,18 @@ const Certifications = () => {
     },
   ];
 
+  const openCertificate = (path) => {
+    window.open(path, "_blank");
+  };
+
   return (
     <Work>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
         {certifications.map((cert, index) => (
           <div
             key={index}
-            className="bg-[#1a202c] h-[400px] w-[300px] flex flex-col items-center p-4 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105"
+            className={`bg-[${cardBgColor}] h-[400px] w-[300px] flex flex-col items-center p-4 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105`}
+            style={{ boxShadow: `0 4px 15px ${cardShadowColor}`, borderColor: borderColor }}
           >
             <div className="w-full h-[150px] flex items-center justify-center mb-4">
               <img
@@ -67,22 +77,24 @@ const Certifications = () => {
                 alt={cert.company}
                 className="w-2/3 h-full object-contain transition-transform duration-300 hover:scale-110"
                 style={{
-                  boxShadow: "0 4px 15px rgba(0, 0, 0, 0.3)",
+                  boxShadow: `0 4px 15px ${cardShadowColor}`,
                   borderRadius: "8px",
                 }}
               />
             </div>
-            <h1 className="text-gray-400 mb-2 font-semibold text-xl">{cert.company}</h1>
-            <h1 className="text-white font-semibold text-2xl text-center mb-2">
+            <h1 className={`mb-2 font-semibold text-xl ${subTextColor}`}>
+              {cert.company}
+            </h1>
+            <h1 className={`font-semibold text-2xl text-center mb-2 ${cardTextColor}`}>
               {cert.title}
             </h1>
-            <h2 className="text-white font-medium mb-2">
+            <h2 className={`font-medium mb-2 ${cardTextColor}`}>
               Completed: {cert.completed}
             </h2>
             {cert.certificate && (
               <h2
                 onClick={() => openCertificate(cert.certificate)}
-                className="text-blue-400 font-normal text-[16px] cursor-pointer mb-2"
+                className={`cursor-pointer mb-2 ${subTextColor}`}
               >
                 Show Certificate
               </h2>
@@ -92,7 +104,7 @@ const Certifications = () => {
                 href={cert.credential}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 font-normal text-[16px] cursor-pointer"
+                className={`text-blue-400 font-normal text-[16px] cursor-pointer ${subTextColor}`}
               >
                 Show Credential
               </a>
@@ -100,6 +112,17 @@ const Certifications = () => {
           </div>
         ))}
       </div>
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .h-[400px] {
+            height: auto;
+          }
+          .w-[300px] {
+            width: 100%;
+          }
+        }
+      `}</style>
     </Work>
   );
 };

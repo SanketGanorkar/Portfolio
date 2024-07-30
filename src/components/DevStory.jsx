@@ -4,8 +4,19 @@ import tripwise from "../assets/tripwise.png";
 import cec from "../assets/Cec.png";
 import armoriq from "../assets/armoriq.png";
 import itsf from "../assets/Itsf.jpg";
+import { useTheme } from "../context/ThemeContext.jsx"; // Import ThemeContext
 
 const DevStory = () => {
+  const { isDark } = useTheme(); // Access theme mode
+
+  // Define colors based on theme
+  const bgColor = isDark ? "#1a202c" : "#ffffff";
+  const containerBgColor = isDark ? "#171717" : "#f9f9f9";
+  const cardBorderColor = isDark ? "#333b4a" : "#dcdcdc";
+  const textColor = isDark ? "text-white" : "text-black";
+  const subTextColor = isDark ? "text-gray-300" : "text-gray-600";
+  const tagBgColor = isDark ? "#3a404c" : "#e2e8f0";
+
   const volunteer = [
     {
       img: cec,
@@ -23,10 +34,13 @@ const DevStory = () => {
 
   return (
     <Work>
-      <div className="bg-[#171717] min-h-screen flex flex-col items-start justify-start p-6 space-y-6">
+      <div className={`bg-[${containerBgColor}] min-h-screen flex flex-col items-start justify-start p-6 space-y-6 ${textColor}`}>
         <div>
-          <h1 className="text-white font-bold text-3xl mb-4">Professional Experience</h1>
-          <div className="bg-[#1a202c] w-full max-w-2xl h-auto mt-5 rounded-xl border border-gray-400 shadow-lg p-6 transform transition-transform duration-300 hover:scale-105">
+          <h1 className="font-bold text-3xl mb-4">Professional Experience</h1>
+          <div
+            className={`w-full max-w-2xl h-auto mt-5 rounded-xl border-[1px] shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 ${bgColor}`}
+            style={{ borderColor: cardBorderColor }}
+          >
             <div className="flex flex-row items-center justify-between">
               <div className="flex flex-row items-center">
                 <img
@@ -35,17 +49,25 @@ const DevStory = () => {
                   className="h-[100px] w-[100px] rounded-full border border-gray-400 mr-6 object-cover"
                 />
                 <div className="flex flex-col">
-                  <h1 className="text-white font-bold text-xl">ArmourIQ</h1>
-                  <h1 className="text-gray-300 font-medium">Freelance Web Developer</h1>
+                  <h1 className="font-bold text-xl">{`ArmourIQ`}</h1>
+                  <h1 className={`font-medium ${subTextColor}`}>Freelance Web Developer</h1>
                 </div>
               </div>
-              <h1 className="text-gray-400 font-medium text-right ml-[50px] mb-12">June 2024 - Present</h1>
+              <h1 className={`font-medium text-right ml-[50px] mb-12 ${subTextColor}`}>
+                June 2024 - Present
+              </h1>
             </div>
             <div className="flex flex-row mt-2 space-x-2">
-              <span className="bg-[#3a404c] py-1 h-8 text-white w-20 text-center font-semibold rounded-lg shadow-md">
+              <span
+                className={`py-1 h-8 ${subTextColor} w-20 text-center font-semibold rounded-lg shadow-md`}
+                style={{ backgroundColor: tagBgColor }}
+              >
                 React
               </span>
-              <span className="bg-[#3a404c] py-1 h-8 text-white w-20 text-center font-semibold rounded-lg shadow-md">
+              <span
+                className={`py-1 h-8 ${subTextColor} w-20 text-center font-semibold rounded-lg shadow-md`}
+                style={{ backgroundColor: tagBgColor }}
+              >
                 Tailwind
               </span>
             </div>
@@ -53,11 +75,12 @@ const DevStory = () => {
         </div>
 
         <div>
-          <h1 className="text-white font-bold text-3xl mb-4">Volunteer Experience</h1>
+          <h1 className="font-bold text-3xl mb-4">Volunteer Experience</h1>
           {volunteer.map((vol, index) => (
             <div
               key={index}
-              className="bg-[#1a202c] w-full max-w-2xl h-auto mt-5 rounded-xl border border-gray-400 shadow-lg p-6 transform transition-transform duration-300 hover:scale-105"
+              className={`w-full max-w-2xl h-auto mt-5 rounded-xl border-[1px] shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 ${bgColor}`}
+              style={{ borderColor: cardBorderColor }}
             >
               <div className="flex flex-row items-center justify-between">
                 <div className="flex flex-row items-center">
@@ -67,8 +90,8 @@ const DevStory = () => {
                     className="h-[100px] w-[100px] rounded-full border border-gray-400 mr-6 object-cover"
                   />
                   <div className="flex flex-col">
-                    <h1 className="text-white font-bold text-xl">{vol.name}</h1>
-                    <div className="text-gray-300 font-medium">
+                    <h1 className="font-bold text-xl">{vol.name}</h1>
+                    <div className={`font-medium ${subTextColor}`}>
                       {vol.role.join(", ")}
                     </div>
                   </div>
@@ -78,7 +101,8 @@ const DevStory = () => {
                 {vol.skills.map((skill, idx) => (
                   <span
                     key={idx}
-                    className="bg-[#3a404c] h-8 text-white text-center font-semibold rounded-lg shadow-md px-3 py-1"
+                    className={`h-8 ${subTextColor} text-center font-semibold rounded-lg shadow-md px-3 py-1`}
+                    style={{ backgroundColor: tagBgColor }}
                   >
                     {skill}
                   </span>
@@ -91,10 +115,6 @@ const DevStory = () => {
 
       <style jsx>{`
         @media (max-width: 768px) {
-          .bg-[#1a202c] {
-            width: 100%;
-            padding: 4px;
-          }
           .h-[100px] {
             height: 80px;
           }

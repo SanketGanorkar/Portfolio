@@ -8,9 +8,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TechStack from "./components/TechStack";
 import DevStory from "./components/DevStory";
 import Certifications from "./components/Certifications";
+import { ThemeProvider } from "./context/ThemeContext.jsx";
+import "./index.css";
 function App() {
   return (
     <>
+      <ThemeProvider>
         <Router>
           <Navbar />
           <Routes>
@@ -26,6 +29,7 @@ function App() {
           </Routes>
           <Footer />
         </Router>
+      </ThemeProvider>
     </>
   );
 }

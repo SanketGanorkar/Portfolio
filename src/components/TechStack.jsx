@@ -1,13 +1,21 @@
 import { tech } from "./techStack/data.js";
-// import Lottie from "lottie-web";
-// import React from "../assets/lottie/react.json"
 import Work from "./Work.jsx";
+import { useTheme } from "../context/ThemeContext.jsx"; // Import ThemeContext
+
 const TechStack = () => {
+  const { isDark } = useTheme(); // Access theme mode
+
+  // Define colors based on theme
+  const bgColor = isDark ? "#1a202c" : "#ffffff";
+  const cardBorderColor = isDark ? "#333b4a" : "#dcdcdc";
+  const textColor = isDark ? "text-white" : "text-black";
+  const subTextColor = isDark ? "text-gray-300" : "text-gray-600";
+
   return (
     <Work>
-      <div className="flex flex-col justify-center items-center p-4">
-        <h1 className="text-gray-300 font-bold text-3xl mb-2">Tech Stack</h1>
-        <p className="text-gray-300 font-medium text-xl text-center">
+      <div className={`flex flex-col justify-center items-center p-4 ${textColor}`}>
+        <h1 className="font-bold text-3xl mb-2">Tech Stack</h1>
+        <p className={`font-medium text-xl text-center ${subTextColor}`}>
           A list of my favorite tools and technologies that I use on a regular
           basis.
         </p>
@@ -15,7 +23,8 @@ const TechStack = () => {
           {tech.map((item, index) => (
             <div
               key={index}
-              className="bg-[#1a202c] m-2 w-[240px] p-3 border-[#333b4a] border-[1px] rounded-lg shadow-lg transition-transform transform hover:scale-105 flex items-center justify-start"
+              className={`m-2 w-[240px] p-3 border-[1px] rounded-lg shadow-lg transition-transform transform hover:scale-105 flex items-center justify-start ${textColor}`}
+              style={{ backgroundColor: bgColor, borderColor: cardBorderColor }}
             >
               <div className="flex items-center mb-1">
                 <div
@@ -27,13 +36,10 @@ const TechStack = () => {
                     className="w-[40px] h-[40px]"
                     alt={item.title}
                   />
-                  {/* <Lottie loop={true} animationData={React} /> */}
                 </div>
                 <div className="ml-3">
-                  <h1 className="text-white text-lg font-semibold font-[inter]">
-                    {item.title}
-                  </h1>
-                  <p className="text-gray-300 text-sm font-medium font-[inter]">
+                  <h1 className="text-lg font-semibold font-[inter]">{item.title}</h1>
+                  <p className={`text-sm font-medium font-[inter] ${subTextColor}`}>
                     {item.skill}
                   </p>
                 </div>
