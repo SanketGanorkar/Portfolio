@@ -1,6 +1,4 @@
 import Work from "./Work.jsx";
-import aws from "../assets/aws2.png";
-import tripwise from "../assets/tripwise.png";
 import cec from "../assets/Cec.png";
 import armoriq from "../assets/armoriq.png";
 import itsf from "../assets/Itsf.jpg";
@@ -22,13 +20,13 @@ const DevStory = () => {
       img: cec,
       name: "Competitive Examination Cell",
       role: ["Design Head", "Publicity Co-ordinator"],
-      skills: ["Communication", "Leadership", "Event Management"],
+      skills: ["Communication", "Leadership"],
     },
     {
       img: itsf,
       name: "Information Technocrats Student Forum",
       role: ["Joint Content Head"],
-      skills: ["Design", "Writing", "Guest Management"],
+      skills: ["Design", "Writing", "Management"],
     },
   ];
 
@@ -54,7 +52,7 @@ const DevStory = () => {
                 </div>
               </div>
               <h1 className={`font-medium text-right ml-[50px] mb-12 ${subTextColor}`}>
-                June 2024 - Present
+                Present
               </h1>
             </div>
             <div className="flex flex-row mt-2 space-x-2">

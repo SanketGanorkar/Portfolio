@@ -120,7 +120,7 @@ const Navbar = () => {
 
   return (
     <div className={`pt-3 px-4 nav ${isDark ? "" : "bg-[#f4f4f4]"} text-${isDark ? "primary-text-color" : "black"}`}>
-      <div className="flex justify-between items-center">
+      <div className=" relative flex justify-between items-center">
         <div className="flex flex-row items-center mt-2 ml-2 md:mt-3 mb-2 md:ml-7">
           <img src={pfp} className="h-12 mb-1 w-12" alt="Profile" />
           <div className="flex flex-row items-center mt-2 ml-2">
@@ -150,7 +150,7 @@ const Navbar = () => {
         <ul
           className={`${
             isMenuOpen ? "flex" : "hidden"
-          } flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6 md:mt-3 mb-2 md:block`}
+          } max-md:absolute max-md:right-1 max-md:top-14 ${isDark ? "bg-[#171717]": "white"} max-md:p-4 flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6 md:mt-3 mb-2 md:block z-[100]`}
         >
           {navLinks.map((link) => (
             <Link
