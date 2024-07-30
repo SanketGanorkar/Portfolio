@@ -27,7 +27,7 @@ const Blog = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {blog.map((item, index) => (
           <a href={item.link} key={index} className="no-underline" target="_blank">
-            <Card className={`h-[428px] w-[300px] ${isDark ? "bg-[#333]" : "bg-white"} shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300`}>
+            <Card className={`h-auto w-[300px] ${isDark ? "bg-[#333]" : "bg-white"} shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300`}>
               <img
                 src={item.icon}
                 alt={item.title}
