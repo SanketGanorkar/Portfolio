@@ -1,6 +1,4 @@
 import html5 from "../../assets/html-5.png";
-// import React from "../../assets/lottie/react.json"
-// import Lottie from "lottie-react";
 import css3 from "../../assets/css3.png"
 import postman from "../../assets/postman.png"
 import bootstrap from "../../assets/bootstrap.png"
@@ -20,9 +18,10 @@ import nodejs from "../../assets/nodejs.png"
 import express from "../../assets/express.png"
 import shadcn from "../../assets/shadcn.png"
 import firebase from "../../assets/firebase.png"
+import docker from "../../assets/docker.png"
+import materialui from "../../assets/materialui.png"
 export const tech = [
   {
-    // icon: <Lottie loop={true} animationData={React} />,
     icon: html5,
     color : "#514441",
     title: "HTML 5",
@@ -101,6 +100,12 @@ export const tech = [
     skill: "UI Framework",
   },
   {
+    icon: materialui,
+    title: "Material UI",
+    color : "#ffffff",
+    skill: "UI Framework",
+  },
+  {
     icon: postman,
     title: "Postman",
     color : "#ffffff",
@@ -116,13 +121,13 @@ export const tech = [
     icon: vercel,
     title: "Vercel",
     color : "#424750",
-    skill: "Deployment Tool",
+    skill: "Hosting platform",
   },
   {
     icon: netlify,
     title: "Netlify",
     color : "#384e5d",
-    skill: "Deployment Tool",
+    skill: "Hosting platform",
   },
   {
     icon: nodejs,
@@ -141,5 +146,11 @@ export const tech = [
     color : "#ffffff",
     title: "Figma",
     skill: "Design Tool",
+  },
+  {
+    icon: docker,
+    color : "#ffffff",
+    title: "Docker",
+    skill: "Deployment Tool",
   },
 ];

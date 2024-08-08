@@ -36,15 +36,21 @@ const Projects = () => {
       tech: ["React", "Vanilla CSS"],
     },
     {
+      img: blogapp,
+      name: "BlogRestAPI",
+      link: "https://github.com/SanketGanorkar/BlogRestAPI",
+      tech: ["Nodejs", "Expressjs", "MongoDB"],
+    },
+    {
       img: rapiddine,
       name: "RapidDine",
       link: "https://github.com/SanketGanorkar/RapidDine",
       tech: ["React", "Vanilla CSS"],
     },
     {
-      img: blogapp,
-      name: "BlogRestAPI",
-      link: "https://github.com/SanketGanorkar/BlogRestAPI",
+      img: matadaan,
+      name: "Nutrify",
+      link: "https://github.com/SanketGanorkar/Nutrify",
       tech: ["Nodejs", "Expressjs", "MongoDB"],
     },
   ];
