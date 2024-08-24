@@ -14,7 +14,7 @@ const Certifications = () => {
   const subTextColor = isDark ? "text-gray-300" : "text-gray-600";
   const cardShadowColor = isDark ? "rgba(0, 0, 0, 0.3)" : "rgba(0, 0, 0, 0.1)";
   const borderColor = isDark ? "#333b4a" : "#dcdcdc";
-  
+
   const certifications = [
     {
       logo: sololearn,
@@ -22,7 +22,7 @@ const Certifications = () => {
       company: "Sololearn",
       completed: "January 2022",
       credential: "https://www.sololearn.com/en/profile/25062702",
-      certificate: "../../public/HTML.pdf",
+      certificate: "../../public/html.pdf",
     },
     {
       logo: sololearn,
@@ -30,7 +30,7 @@ const Certifications = () => {
       company: "Sololearn",
       completed: "March 2022",
       credential: "https://www.sololearn.com/en/profile/25062702",
-      certificate: "../../public/Python.pdf",
+      certificate: "../../public/python.pdf",
     },
     {
       logo: cisco,
@@ -38,14 +38,15 @@ const Certifications = () => {
       company: "Cisco Networking Academy",
       completed: "May 2023",
       credential: "",
-      certificate: "../../public/CCNA-1.pdf",
+      certificate: "../../public/CCNA_1.pdf",
     },
     {
       logo: google,
       title: "Introduction to Generative AI",
       company: "Google",
       completed: "July 2023",
-      credential: "https://www.cloudskillsboost.google/public_profiles/a5e0277d-f165-4994-90c6-6f3bb3d01e6c",
+      credential:
+        "https://www.cloudskillsboost.google/public_profiles/a5e0277d-f165-4994-90c6-6f3bb3d01e6c",
       certificate: "",
     },
     {
@@ -53,8 +54,9 @@ const Certifications = () => {
       title: "AWS Academy Cloud Foundations",
       company: "AWS",
       completed: "April 2024",
-      credential: "https://www.credly.com/badges/e67e20c1-7a5d-4399-a1b2-a18b9d140ff6/",
-      certificate: "../../public/AWS_Cloud_Foundations.pdf",
+      credential:
+        "https://www.credly.com/badges/e67e20c1-7a5d-4399-a1b2-a18b9d140ff6/",
+      certificate: "../../public/AWS_Cloud.pdf",
     },
   ];
 
@@ -69,7 +71,10 @@ const Certifications = () => {
           <div
             key={index}
             className={`bg-[${cardBgColor}] h-[400px] w-[300px] flex flex-col items-center p-4 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105`}
-            style={{ boxShadow: `0 4px 15px ${cardShadowColor}`, borderColor: borderColor }}
+            style={{
+              boxShadow: `0 4px 15px ${cardShadowColor}`,
+              borderColor: borderColor,
+            }}
           >
             <div className="w-full h-[150px] flex items-center justify-center mb-4">
               <img
@@ -85,7 +90,9 @@ const Certifications = () => {
             <h1 className={`mb-2 font-semibold text-xl ${subTextColor}`}>
               {cert.company}
             </h1>
-            <h1 className={`font-semibold text-2xl text-center mb-2 ${cardTextColor}`}>
+            <h1
+              className={`font-semibold text-2xl text-center mb-2 ${cardTextColor}`}
+            >
               {cert.title}
             </h1>
             <h2 className={`font-medium mb-2 ${cardTextColor}`}>
