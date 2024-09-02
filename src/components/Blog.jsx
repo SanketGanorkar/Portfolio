@@ -1,5 +1,8 @@
 import { useTheme } from "../context/ThemeContext.jsx";
-import blog1 from "../assets/blog1.jpeg";
+import { Cloudinary } from '@cloudinary/url-gen';
+import { auto } from '@cloudinary/url-gen/actions/resize';
+import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
+import { AdvancedImage } from '@cloudinary/react';
 import {
   Card,
   CardContent,
@@ -8,11 +11,17 @@ import {
 } from "@/components/ui/card";
 
 const Blog = () => {
+  const cld = new Cloudinary({ cloud: { cloudName: 'djad4ajle' } });
+  const img = cld
+    .image('blog1_lw3wes')
+    .format('auto')
+    .quality('auto')
+    .resize(auto().gravity(autoGravity()).width(500).height(360));
   const { isDark } = useTheme();
 
   const blog = [
     {
-      icon: blog1,
+      icon: <AdvancedImage cldImg={img} />,
       title: "Demystifying Computer Science",
       desc: "This page aims to make the terms associated with computer science and software engineering more understandable.",
       link: "https://medium.com/@sanket200503/demystifying-computer-science-simplifying-key-concepts-for-beginners-part-i-bd8fe9f4f982",
@@ -28,13 +37,11 @@ const Blog = () => {
         {blog.map((item, index) => (
           <a href={item.link} key={index} className="no-underline" target="_blank">
             <Card className={`h-auto w-[300px] ${isDark ? "bg-[#333]" : "bg-white"} shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300`}>
-              <img
-                src={item.icon}
-                alt={item.title}
-                className="h-[200px] w-full object-cover rounded-t-lg"
-              />
+              <div className="h-[200px] w-full object-cover rounded-t-lg">
+                {item.icon}
+              </div>
               <CardHeader className={`px-4 pt-4 ${isDark ? "text-white" : "text-black"}`}>
-                <CardTitle className={`text-3xl font-semibold ${isDark ? "text-white" : "text-black"}`}>
+                <CardTitle className={`max-sm:mt-5 text-3xl font-semibold ${isDark ? "text-white" : "text-black"}`}>
                   {item.title}
                 </CardTitle>
               </CardHeader>

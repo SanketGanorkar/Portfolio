@@ -3,8 +3,17 @@ import { IoMail } from "react-icons/io5";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import avatar from "../assets/avatar.png";
 import { useTheme } from "../context/ThemeContext.jsx"; // Import the theme context
-
+import cld from "@/cloudConfig/cloudinaryConfig";
+import { auto } from '@cloudinary/url-gen/actions/resize';
+import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
+import { AdvancedImage } from '@cloudinary/react';
 const Home = () => {
+  const img = cld
+    .image('avatar_rcsadd')
+    .format('auto')
+    .quality('auto')
+    .resize(auto().gravity(autoGravity()));
+
   const [typeEffect] = useTypewriter({
     words: [
       "Frontend Developer",
@@ -41,7 +50,8 @@ const Home = () => {
           </h3>
         </div>
         <div className="mt-8 md:mt-0 max-sm:order-1 max-sm:mb-2 max-sm:mt-[55px]">
-          <img src={avatar} className="h-[365px] w-[250px] object-cover mx-auto md:mx-0 max-sm:h-[248px] max-sm:w-[170px]" alt="Avatar" />
+          {/* <img src={avatar} className="h-[365px] w-[250px] object-cover mx-auto md:mx-0 max-sm:h-[248px] max-sm:w-[170px]" alt="Avatar" /> */}
+          <div><AdvancedImage cldImg={img} className="h-[365px] w-[250px] object-cover mx-auto md:mx-0 max-sm:h-[248px] max-sm:w-[170px]"/></div>
         </div>
       </div>
       <div className="flex flex-row justify-center items-center gap-5 mt-10 max-sm:mt-3 max-sm:mb-[70px]">

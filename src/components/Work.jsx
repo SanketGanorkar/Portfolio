@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
-import { useTheme } from "../context/ThemeContext.jsx"; // Import ThemeContext
+import { useTheme } from "../context/ThemeContext.jsx";
 
+import { AdvancedImage } from '@cloudinary/react';
 const Work = ({ children }) => {
   const { isDark } = useTheme(); // Access theme mode
   const navLinks = [

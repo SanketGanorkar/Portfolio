@@ -3,6 +3,7 @@ import { useTheme } from "../context/ThemeContext.jsx";
 import tripwise from "../assets/tripwise.png";
 import logoexpress from "../assets/logoexpress.png";
 import rapiddine from "../assets/rapiddine.png";
+import { projects } from '../cloudConfig/Projects.js'
 import matadaan from "../assets/Matadaan.png";
 import blogapp from "../assets/BlogApp.png";
 import podstream from "../assets/podstream.png";

@@ -2,6 +2,7 @@ import { tech } from "./techStack/data.js";
 import Work from "./Work.jsx";
 import { useTheme } from "../context/ThemeContext.jsx"; // Import ThemeContext
 
+
 const TechStack = () => {
   const { isDark } = useTheme(); // Access theme mode
 

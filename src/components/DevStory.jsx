@@ -3,6 +3,17 @@ import cec from "../assets/Cec.png";
 import armoriq from "../assets/armoriq.png";
 import itsf from "../assets/Itsf.jpg";
 import { useTheme } from "../context/ThemeContext.jsx"; // Import ThemeContext
+import { devstory } from "../cloudConfig/DevStory.js";
+import { AdvancedImage } from '@cloudinary/react';
+import cld from "@/cloudConfig/cloudinaryConfig.js";
+import { auto } from '@cloudinary/url-gen/actions/resize';
+import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
+
+const armouriq = cld
+  .image('armoriq_pqgmkb')
+  .format('auto')
+  .quality('auto')
+  .resize(auto().gravity(autoGravity()));
 
 const DevStory = () => {
   const { isDark } = useTheme(); // Access theme mode
@@ -17,13 +28,13 @@ const DevStory = () => {
 
   const volunteer = [
     {
-      img: cec,
+      img: <AdvancedImage cldImg={devstory[1].img} />,
       name: "Competitive Examination Cell",
       role: ["Design Head", "Publicity Co-ordinator"],
       skills: ["Communication", "Leadership"],
     },
     {
-      img: itsf,
+      img: <AdvancedImage cldImg={devstory[2].img} />,
       name: "Information Technocrats Student Forum",
       role: ["Joint Content Head"],
       skills: ["Design", "Writing", "Management"],
@@ -41,9 +52,8 @@ const DevStory = () => {
           >
             <div className="flex flex-row items-center justify-between">
               <div className="flex flex-row items-center">
-                <img
-                  src={armoriq}
-                  alt="ArmourIQ"
+                <AdvancedImage
+                  cldImg={armouriq}
                   className="h-[100px] w-[100px] rounded-full border border-gray-400 mr-6 object-cover"
                 />
                 <div className="flex flex-col">
@@ -82,11 +92,9 @@ const DevStory = () => {
             >
               <div className="flex flex-row items-center justify-between">
                 <div className="flex flex-row items-center">
-                  <img
-                    src={vol.img}
-                    alt={vol.name}
-                    className="h-[100px] w-[100px] rounded-full border border-gray-400 mr-6 object-cover"
-                  />
+                  <div className="h-[100px] w-[100px] rounded-full border border-gray-400 mr-6 object-cover">
+                    {vol.img}
+                  </div>
                   <div className="flex flex-col">
                     <h1 className="font-bold text-xl">{vol.name}</h1>
                     <div className={`font-medium ${subTextColor}`}>
@@ -110,38 +118,6 @@ const DevStory = () => {
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .h-[100px] {
-            height: 80px;
-          }
-          .w-[100px] {
-            width: 80px;
-          }
-          .text-3xl {
-            font-size: 1.5rem;
-          }
-          .text-xl {
-            font-size: 1.25rem;
-          }
-          .text-lg {
-            font-size: 1rem;
-          }
-          .p-6 {
-            padding: 1rem;
-          }
-          .mb-4 {
-            margin-bottom: 1rem;
-          }
-          .max-w-2xl {
-            max-width: 100%;
-          }
-          .space-y-6 {
-            gap: 1.5rem;
-          }
-        }
-      `}</style>
     </Work>
   );
 };
