@@ -1,7 +1,7 @@
 import { FaInstagram, FaLinkedin, FaGithub, FaRegFile } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import avatar from "../assets/avatar.png";
+// import avatar from "../assets/avatar.png";
 import { useTheme } from "../context/ThemeContext.jsx"; // Import the theme context
 import cld from "@/cloudConfig/cloudinaryConfig";
 import { auto } from '@cloudinary/url-gen/actions/resize';
@@ -38,7 +38,7 @@ const Home = () => {
       <div className="flex flex-col md:flex-row items-center gap-5 max-sm:flex-col max-sm:items-center">
         <div className="flex flex-col max-w-[600px] text-center md:text-left max-sm:order-2">
           <h2 className={`text-${isDark ? "white" : "gray-800"} text-4xl font-bold`}>Hey! 👋🏼</h2>
-          <h3 className={`text-${isDark ? "white" : "gray-800"} text-4xl font-bold`}>I'm Sanket Ganorkar</h3>
+          <h3 className={`text-${isDark ? "white" : "gray-800"} text-4xl font-bold`}>I{"'"}m Sanket Ganorkar</h3>
           <p className={`text-${isDark ? "white" : "gray-800"} font-semibold text-[22px] mt-4 md:mt-0`}>
             A tech enthusiast who tries to search and learn new things every day. I am an ambition-driven, goal-oriented person who seeks opportunities in web and full-stack development as well as cloud computing, where I can hone my skills.
           </p>
