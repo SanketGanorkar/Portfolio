@@ -21,7 +21,7 @@ const Footer = () => {
       {/* <img src={avatar} className="h-[45px]" alt="Avatar" /> */}
       <AdvancedImage cldImg = {img} className="h-[45px]" />
       <p className={`font-normal ${isDark ? "text-white" : "text-black"}`}>
-        © 2024. All rights reserved
+        © 2025. All rights reserved
       </p>
       {/* Social media handles */}
       <div className="flex flex-row items-center">

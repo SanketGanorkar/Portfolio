@@ -1,6 +1,7 @@
 import Work from "./Work.jsx";
 import google from "../assets/google.png";
 import cisco from "../assets/cisco.png";
+import ibm from "../assets/ibm.png";
 import sololearn from "../assets/sololearn.png";
 import aws from "../assets/aws2.png";
 import { useTheme } from "../context/ThemeContext.jsx"; // Import ThemeContext
@@ -41,14 +42,22 @@ const Certifications = () => {
       certificate: "../../public/CCNA_1.pdf",
     },
     {
-      logo: google,
-      title: "Introduction to Generative AI",
-      company: "Google",
-      completed: "July 2023",
-      credential:
-        "https://www.cloudskillsboost.google/public_profiles/a5e0277d-f165-4994-90c6-6f3bb3d01e6c",
-      certificate: "",
+      logo: ibm,
+      title: "Full Stack Development",
+      company: "IBM",
+      completed: "Nov 2025",
+      credential: "",
+      certificate: "../../public/Full_Stack.pdf",
     },
+    // {
+    //   logo: google,
+    //   title: "Introduction to Generative AI",
+    //   company: "Google",
+    //   completed: "July 2023",
+    //   credential:
+    //     "https://www.cloudskillsboost.google/public_profiles/a5e0277d-f165-4994-90c6-6f3bb3d01e6c",
+    //   certificate: "",
+    // },
     {
       logo: aws,
       title: "AWS Academy Cloud Foundations",

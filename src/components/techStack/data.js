@@ -19,6 +19,8 @@ import express from "../../assets/express.png"
 import shadcn from "../../assets/shadcn.png"
 import firebase from "../../assets/firebase.png"
 import docker from "../../assets/docker.png"
+import bash from "../../assets/bash.png"
+import ubuntu from "../../assets/ubuntu.png"
 import materialui from "../../assets/materialui.png"
 export const tech = [
   {
@@ -39,12 +41,12 @@ export const tech = [
     title: "Javascript",
     skill: "Full Stack Development",
   },
-  {
-    icon: bootstrap,
-    color : "#000000",
-    title: "Bootstrap",
-    skill: "Frontend Development",
-  },
+  // {
+  //   icon: bootstrap,
+  //   color : "#000000",
+  //   title: "Bootstrap",
+  //   skill: "Frontend Development",
+  // },
   {
     icon: tailwind,
     color : "#384e5d",
@@ -76,6 +78,18 @@ export const tech = [
     skill: "Database",
   },
   {
+    icon: ubuntu,
+    title: "Ubuntu",
+    color : "#ffffff",
+    skill: " Ubuntu OS",
+  },
+  {
+    icon: bash,
+    title: "Bash",
+    color : "#ffffff",
+    skill: "Shell Scripting",
+  },
+  {
     icon: firebase,
     title: "Firebase",
     color : "#ffffff",
@@ -93,18 +107,18 @@ export const tech = [
     color : "#ffffff",
     skill: "Collaborative Tools",
   },
-  {
-    icon: shadcn,
-    title: "Shadcn UI",
-    color : "#ffffff",
-    skill: "UI Framework",
-  },
-  {
-    icon: materialui,
-    title: "Material UI",
-    color : "#ffffff",
-    skill: "UI Framework",
-  },
+  // {
+  //   icon: shadcn,
+  //   title: "Shadcn UI",
+  //   color : "#ffffff",
+  //   skill: "UI Framework",
+  // },
+  // {
+  //   icon: materialui,
+  //   title: "Material UI",
+  //   color : "#ffffff",
+  //   skill: "UI Framework",
+  // },
   {
     icon: postman,
     title: "Postman",
@@ -123,12 +137,12 @@ export const tech = [
     color : "#424750",
     skill: "Hosting platform",
   },
-  {
-    icon: netlify,
-    title: "Netlify",
-    color : "#384e5d",
-    skill: "Hosting platform",
-  },
+  // {
+  //   icon: netlify,
+  //   title: "Netlify",
+  //   color : "#384e5d",
+  //   skill: "Hosting platform",
+  // },
   {
     icon: nodejs,
     title: "Node",

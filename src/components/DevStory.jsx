@@ -2,6 +2,7 @@ import Work from "./Work.jsx";
 import cec from "../assets/Cec.png";
 import armoriq from "../assets/armoriq.png";
 import itsf from "../assets/Itsf.jpg";
+// import bizamica from "../assets/bizamica_logo.jpeg";
 import { useTheme } from "../context/ThemeContext.jsx"; // Import ThemeContext
 import { devstory } from "../cloudConfig/DevStory.js";
 import { AdvancedImage } from '@cloudinary/react';
@@ -14,6 +15,12 @@ const armouriq = cld
   .format('auto')
   .quality('auto')
   .resize(auto().gravity(autoGravity()));
+
+  const bizAmica = cld
+    .image('bizamica_logo_tk3xpq')
+    .format('auto')
+    .quality('auto')
+    .resize(auto().gravity(autoGravity()));
 
 const DevStory = () => {
   const { isDark } = useTheme(); // Access theme mode
@@ -45,9 +52,55 @@ const DevStory = () => {
     <Work>
       <div className={`bg-[${containerBgColor}] min-h-screen flex flex-col items-start justify-start p-6 space-y-6 ${textColor}`}>
         <div>
-          <h1 className="font-bold text-3xl mb-4">Professional Experience</h1>
+          <h1 className="font-bold text-3xl mb-4  sm:text-2xl">Professional Experience</h1>
           <div
             className={`w-full max-w-2xl h-auto mt-5 rounded-xl border-[1px] shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 ${bgColor}`}
+            style={{ borderColor: cardBorderColor }}
+          >
+            <div className="flex flex-row items-center justify-between">
+              <div className="flex flex-row items-center">
+                <AdvancedImage
+                  cldImg={bizAmica}
+                  className="h-[100px] w-[100px] rounded-full border border-gray-400 mr-6 object-cover"
+                />
+                <div className="flex flex-col">
+                  <h1 className="font-bold text-xl">{`bizAmica Software`}</h1>
+                  <h1 className={`font-medium ${subTextColor}`}>SDE Intern</h1>
+                </div>
+              </div>
+              <h1 className={`font-medium text-right ml-[50px] mb-12 sm:ml-4  ${subTextColor}`}>
+                Jan 25 - Apr 25
+              </h1>
+            </div>
+            <div className="flex flex-row mt-2 space-x-2">
+              <span
+                className={`py-[2px] h-7 ${subTextColor} w-20 text-center font-semibold rounded-lg shadow-md`}
+                style={{ backgroundColor: tagBgColor }}
+              >
+                Angular
+              </span>
+              <span
+                className={`py-[2px] h-7 ${subTextColor} w-28 text-center font-semibold rounded-lg shadow-md`}
+                style={{ backgroundColor: tagBgColor }}
+              >
+                Linux Server
+              </span>
+              <span
+                className={`py-[2px] h-7 ${subTextColor} w-20 text-center font-semibold rounded-lg shadow-md`}
+                style={{ backgroundColor: tagBgColor }}
+              >
+                Python
+              </span>
+              <span
+                className={`py-[2px] h-7 ${subTextColor} w-20 text-center font-semibold rounded-lg shadow-md`}
+                style={{ backgroundColor: tagBgColor }}
+              >
+                Chart.js
+              </span>
+            </div>
+          </div>
+          <div
+            className={`w-full  max-w-2xl h-auto mt-5 rounded-xl border-[1px] shadow-lg p-6 transform transition-transform duration-300 hover:scale-105 ${bgColor}`}
             style={{ borderColor: cardBorderColor }}
           >
             <div className="flex flex-row items-center justify-between">
@@ -58,22 +111,22 @@ const DevStory = () => {
                 />
                 <div className="flex flex-col">
                   <h1 className="font-bold text-xl">{`ArmourIQ`}</h1>
-                  <h1 className={`font-medium ${subTextColor}`}>Freelance Web Developer</h1>
+                  <h1 className={`font-medium ${subTextColor}`}>Web Developer</h1>
                 </div>
               </div>
               <h1 className={`font-medium text-right ml-[50px] mb-12 ${subTextColor}`}>
-                Present
+                Jul 24 - Aug 24
               </h1>
             </div>
             <div className="flex flex-row mt-2 space-x-2">
               <span
-                className={`py-1 h-8 ${subTextColor} w-20 text-center font-semibold rounded-lg shadow-md`}
+                className={`py-[2px] h-7 ${subTextColor} w-20 text-center font-semibold rounded-lg shadow-md`}
                 style={{ backgroundColor: tagBgColor }}
               >
                 React
               </span>
               <span
-                className={`py-1 h-8 ${subTextColor} w-20 text-center font-semibold rounded-lg shadow-md`}
+                className={`py-[2px] h-7 ${subTextColor} w-20 text-center font-semibold rounded-lg shadow-md`}
                 style={{ backgroundColor: tagBgColor }}
               >
                 Tailwind
@@ -82,7 +135,7 @@ const DevStory = () => {
           </div>
         </div>
 
-        <div>
+        {/* <div>
           <h1 className="font-bold text-3xl mb-4">Volunteer Experience</h1>
           {volunteer.map((vol, index) => (
             <div
@@ -116,7 +169,7 @@ const DevStory = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </Work>
   );

@@ -9,6 +9,12 @@ import { AdvancedImage } from '@cloudinary/react';
     .quality('auto')
     .resize(auto().gravity(autoGravity()));
 
+    const bizAmica = cld
+    .image('bizamica_logo_tk3xpq')
+    .format('auto')
+    .quality('auto')
+    .resize(auto().gravity(autoGravity()));
+
     const cec = cld
     .image('Cec_yyywp1')
     .format('auto')

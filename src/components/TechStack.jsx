@@ -17,8 +17,7 @@ const TechStack = () => {
       <div className={`flex flex-col justify-center items-center p-4 ${textColor}`}>
         <h1 className="font-bold text-3xl mb-2">Tech Stack</h1>
         <p className={`font-medium text-xl text-center ${subTextColor}`}>
-          A list of my favorite tools and technologies that I use on a regular
-          basis.
+          A list of my tools & technologies that I have worked on .
         </p>
         <div className="flex flex-wrap justify-center">
           {tech.map((item, index) => (

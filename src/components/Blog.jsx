@@ -3,6 +3,7 @@ import { Cloudinary } from '@cloudinary/url-gen';
 import { auto } from '@cloudinary/url-gen/actions/resize';
 import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
 import { AdvancedImage } from '@cloudinary/react';
+import blog2 from "../assets/blog2.png"
 import {
   Card,
   CardContent,
@@ -16,14 +17,26 @@ const Blog = () => {
     .format('auto')
     .quality('auto')
     .resize(auto().gravity(autoGravity()).width(500).height(360));
+
+    const img2 = cld
+    .image('blog2_cwoxui')
+    .format('auto')
+    .quality('auto')
+    .resize(auto().gravity(autoGravity()).width(500).height(360));
   const { isDark } = useTheme();
 
   const blog = [
     {
       icon: <AdvancedImage cldImg={img} />,
-      title: "Demystifying Computer Science",
-      desc: "This page aims to make the terms associated with computer science and software engineering more understandable.",
+      title: "Simplifying Computer Science-I",
+      desc: "This page aims to make the terms associated with computer science & software engineering more understandable.",
       link: "https://medium.com/@sanket200503/demystifying-computer-science-simplifying-key-concepts-for-beginners-part-i-bd8fe9f4f982",
+    },
+    {
+      icon: <AdvancedImage cldImg={img2} />,
+      title: "Simplifying Computer Science-II",
+      desc: "This page aims to make the terms associated with computer science & software engineering more understandable.",
+      link: "https://medium.com/@sanket200503/demystifying-computer-science-simplifying-key-concepts-for-beginners-part-ii-be3a02c93e01",
     },
   ];
 

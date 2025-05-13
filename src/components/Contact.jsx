@@ -7,7 +7,7 @@ const Contact = () => {
   const { isDark } = useTheme(); // Use the useTheme hook
 
   const openResume = () => {
-    const resumeUrl = "/Sanket_resume.pdf";
+    const resumeUrl = "/Sanket_Resume.pdf";
     window.open(resumeUrl, "_blank");
   };
 
